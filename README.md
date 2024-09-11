@@ -1,6 +1,6 @@
 # Are CLIP features all you need for Universal Synthetic Image Origin Attribution?
 
-Authors' official PyTorch implementation of the ***"Are CLIP features all you need for Universal Synthetic Image Origin Attribution?"***, accepted in the Trust What You learN (**TWYN**) Workshop of **ECCV 2024**. If you find this code useful for your research, please [cite](#citation) our paper.
+Authors' official PyTorch implementation of the paper ***"Are CLIP features all you need for Universal Synthetic Image Origin Attribution?"***, accepted in the Trust What You learN (**TWYN**) Workshop of **ECCV 2024**. If you find this code useful for your research, please [cite](#citation) our paper.
 
 > [**Are CLIP features all you need for Universal Synthetic Image Origin Attribution?"**](http://arxiv.org/abs/2408.09153) <br>Dario Cioni, Christos Tzelepis,  Lorenzo Seidenari, and  Ioannis Patras<br>
 > Trust What You learN (TWYN) Workshop of ECCV 2024.<br>
@@ -8,7 +8,11 @@ Authors' official PyTorch implementation of the ***"Are CLIP features all you ne
 
 ![alt text](figs/overview.png)
 
+## News
 
+- [2024/09] 🏆 Our paper was selected for **Best Paper Award** at ECCV2024 TWYN workshop 🎉
+
+## Code
 
 **Code coming soon...**
 
