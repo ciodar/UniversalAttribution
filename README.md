@@ -12,6 +12,41 @@ Authors' official PyTorch implementation of the paper ***"Are CLIP features all 
 
 - [2024/09] 🏆 Our paper was selected for **Best Paper Award** at ECCV2024 TWYN workshop 🎉
 
+## Dataset
+
+Our experiments are based on [GenImage](https://github.com/GenImage-Dataset/GenImage) dataset. Please refer to the official repository for more details on how to download the dataset.
+
+The splits used for Open-Set Origin Attribution on GenImage are available at this [link](https://drive.google.com/drive/folders/1Pjt1JOpCvuMOT_EdVW9WDYLj0XmfIXTq?usp=sharing). Download the splits and place them into the directory `./dataset/`.
+
+The dataset directory should look like this:
+```
+dataset
+│
+└───GenImage
+    │
+    ├── $split{id}_test
+    │   └── annotations
+    │       ├── $split{id}_test.txt
+    │       └── $split{id}_test_out_all.txt
+    ├── $split{id}_train
+    │   └── annotations
+    │       └── $split{id}_train.txt
+    ├── $split{id}_val
+    │    └── annotations
+    │        ├── $split{id}_val.txt
+    │        └── $split{id}_test_out_all.txt
+    ...
+    ├── model_1
+    │   ├── train
+    │   │   ├── ai
+    │   │   └── nature
+    │   └── val
+    │       ├── ai
+    │       └── nature
+    ├── model_2
+    ...
+```
+
 ## Code
 
 **Code coming soon...**
@@ -31,8 +66,6 @@ If you find this work useful, please consider citing it:
     primaryClass={cs.CV}
 }
 ```
-
-
 
 ## Acknowledgment
 
