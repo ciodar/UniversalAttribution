@@ -1,0 +1,55 @@
+split1:
+    data_path: ./dataset/GenImage
+    known_classes: ['real', 'wukong', 'Midjourney', 'VQDM', 'stable_diffusion_v_1_4']
+    unknown_classes:
+        all: ['stable_diffusion_v_1_5', 'BigGAN', 'ADM', 'glide']
+    train_collection: split1_train
+    val_collection: split1_val
+    test_data_path: ./dataset/GenImage/split1_val/annotations/split1_val.txt
+    out_data_paths:
+        all: ./dataset/GenImage/split1_val/annotations/split1_val_out_all.txt
+        test_all: ./dataset/GenImage/split1_test/annotations/split1_test_out_all.txt
+split2:
+    data_path: ./dataset/GenImage
+    known_classes: ['real', 'Midjourney', 'VQDM', 'stable_diffusion_v_1_4', 'ADM']
+    unknown_classes:
+        all: ['wukong', 'stable_diffusion_v_1_5', 'BigGAN', 'glide']
+    train_collection: split2_train
+    val_collection: split2_val
+    test_data_path: ./dataset/GenImage/split2_val/annotations/split2_val.txt
+    out_data_paths:
+        all: ./dataset/GenImage/split2_val/annotations/split2_val_out_all.txt
+        test_all: ./dataset/GenImage/split2_test/annotations/split2_test_out_all.txt
+split3:
+    data_path: ./dataset/GenImage
+    known_classes: ['real', 'VQDM', 'stable_diffusion_v_1_4', 'ADM', 'BigGAN']
+    unknown_classes:
+        all: ['wukong', 'stable_diffusion_v_1_5', 'Midjourney', 'glide']
+    train_collection: split3_train
+    val_collection: split3_val
+    test_data_path: ./dataset/GenImage/split3_val/annotations/split3_val.txt
+    out_data_paths:
+        all: ./dataset/GenImage/split3_val/annotations/split3_val_out_all.txt
+        test_all: ./dataset/GenImage/split3_test/annotations/split3_test_out_all.txt
+split4:
+    data_path: ./dataset/GenImage
+    known_classes: ['real', 'stable_diffusion_v_1_4', 'ADM', 'BigGAN', 'glide']
+    unknown_classes:
+        all: ['wukong', 'stable_diffusion_v_1_5', 'VQDM', 'Midjourney']
+    train_collection: split4_train
+    val_collection: split4_val
+    test_data_path: ./dataset/GenImage/split4_val/annotations/split4_val.txt
+    out_data_paths:
+        all: ./dataset/GenImage/split4_val/annotations/split4_val_out_all.txt
+        test_all: ./dataset/GenImage/split4_test/annotations/split4_test_out_all.txt
+split5:
+    data_path: ./dataset/GenImage
+    known_classes: ['real', 'ADM', 'BigGAN', 'glide', 'stable_diffusion_v_1_5']
+    unknown_classes:
+        all: ['wukong', 'stable_diffusion_v_1_4', 'VQDM', 'Midjourney']
+    train_collection: split5_train
+    val_collection: split5_val
+    test_data_path: ./dataset/GenImage/split5_val/annotations/split5_val.txt
+    out_data_paths:
+        all: ./dataset/GenImage/split5_val/annotations/split5_val_out_all.txt
+        test_all: ./dataset/GenImage/split5_test/annotations/split5_test_out_all.txt

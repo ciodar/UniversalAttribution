@@ -1,0 +1,10 @@
+DiffusionForensics:
+    data_path: ./dataset
+    known_classes: ['real', 'stylegan', 'iddpm', 'adm', 'pndm']
+    unknown_classes:
+        all: ['dalle2', 'ddpm','diff-projectedgan','diff-stylegan','if', 'ldm','midjourney','projectedgan','sdv1_new','sdv2','vqdiffusion']
+    train_collection: df_train
+    val_collection: df_val
+    test_data_path: ./dataset/df_test/annotations/df_test.txt
+    out_data_paths:
+        all: ./dataset/df_test/annotations/test_out.txt

@@ -11,6 +11,7 @@ Authors' official PyTorch implementation of the paper ***"Are CLIP features all 
 ## News
 
 - [2024/09] 🏆 Our paper was selected for **Best Paper Award** at ECCV2024 TWYN workshop 🎉
+- [2024/08] Our paper was accepted at the for [Trust What You learN (TWYN) workshop](https://twyn.unimore.it/) at ECCV2024 🎉
 
 ## Dataset
 
@@ -49,9 +50,7 @@ dataset
 
 ## Code
 
-**Code coming soon...**
-
-
+Code released. README will be updated soon with instructions on how to run the code.
 
 ## Citation
 
@@ -68,5 +67,8 @@ If you find this work useful, please consider citing it:
 ```
 
 ## Acknowledgment
+
+The training and evaluation pipelines are inspired by [POSE](https://github.com/ICTMCG/POSE). 
+We thank the authors for sharing their code. We also thank the authors of [GenImage](https://github.com/GenImage-Dataset/GenImage) for providing the dataset.
 
 This research was supported by the EU's Horizon 2020 programme H2020-951911 [AI4Media](https://www.ai4media.eu/) project.

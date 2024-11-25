@@ -1,0 +1,6 @@
+.dataset/
+*.ini
+*.pycache
+*.pyc
+
+dataset/
