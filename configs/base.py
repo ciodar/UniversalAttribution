@@ -16,6 +16,7 @@ class Config(object):
     samples_per_class = 4000
 
     # perturbations
+    train_perturbations = None
     perturbations = None
     perturbation_intensity = -1
     resize_range = (128, 1024)

@@ -50,7 +50,10 @@ dataset
 
 ## Code
 
-Code released. README will be updated soon with instructions on how to run the code.
+To run the code, execute the following command:
+```bash
+python linear.py -c base -d GenImage:split=split1
+```
 
 ## Citation
 

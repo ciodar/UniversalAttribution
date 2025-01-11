@@ -32,7 +32,8 @@ def collate_fn(batch):
 
 
 def read_annotations(data_path, debug=False, shuffle=True):
-    lines = map(str.strip, open(data_path).readlines())
+    with open(data_path) as f:
+        lines = f.read().splitlines() 
     data = []
     for line in lines:
         sample_path, label = line.split('\t')

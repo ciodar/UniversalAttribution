@@ -34,7 +34,6 @@ def get_train_perturbations(config):
         if config.crop_range:
             perturbations.append(RandomResizedCrop(size=config.resize_size, scale=config.crop_range))
         return RandomChoice(perturbations)
-    return Lambda(lambda x: x)
 
 def get_test_perturbations(config):
     perturbations = []

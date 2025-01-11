@@ -4,7 +4,7 @@ import time
 import torch
 import os
 from sklearn.metrics import accuracy_score, f1_score, recall_score, confusion_matrix
-from evaluation import evaluate_multiclass
+from utils.evaluation import evaluate_multiclass
 import numpy as np
 import timm
 from timm.data import resolve_data_config
@@ -34,7 +34,7 @@ def parse_args():
     parser.add_argument('--c_min', type=int, help='range of C values to sweep')
     parser.add_argument('--c_max', type=int, help='range of C values to sweep')
     parser.add_argument('--c_step', type=int, help='range of C values to sweep')
-    parser.add_argument('-c', '--C', type=float, help='C value for linear classifier')
+    parser.add_argument('--C', type=float, help='C value for linear classifier')
 
 
     parser.set_defaults(
@@ -187,7 +187,8 @@ if __name__ == '__main__':
         blocks = opt.blocks
 
     # Load data configuration
-    data_list = parse_data_str(opt.dataset_str)
+    data_list, kwargs = parse_data_str(opt.dataset_str)
+    print(kwargs)
     train_data_path, val_data_path = get_train_paths(data_list)
     test_data_path, out_data_paths = data_list['test_data_path'], data_list['out_data_paths']
     # Set configuration variables for the dataset

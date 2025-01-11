@@ -1,5 +1,4 @@
 from torchvision import transforms
-from utils.data.augmentations.cutout import *
 import albumentations as A
 
 import numpy as np
