@@ -1,6 +1,4 @@
 from torchvision import transforms
-import albumentations as A
-
 import numpy as np
 from PIL import Image
 

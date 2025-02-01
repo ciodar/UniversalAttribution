@@ -10,7 +10,6 @@ import torch
 from torch.autograd import Function
 import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE as TSNE
-import seaborn as sns
 
 
 def setup_seed(seed):
@@ -109,6 +108,7 @@ def plot_hist(x1, x2, save_path):
 
 
 def plot_hist_seaborn(x1, x2, save_path):
+    import seaborn as sns
     plt.figure(figsize=(8, 5))
     for d, legend in zip([x1, x2], ['known', 'unknown']):
         sns.kdeplot(d, shade=True, alpha=.3, label=legend)

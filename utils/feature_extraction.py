@@ -1,9 +1,8 @@
 import torch
 import tqdm
 
-from transformers import CLIPVisionModel, AutoModel, AutoProcessor
-
 def get_feature_extractor(model_str):
+    from transformers import CLIPVisionModel, AutoModel, AutoProcessor
     if model_str.startswith('openai/clip-'):
         model = CLIPVisionModel.from_pretrained(model_str, output_hidden_states=True)
         processor = AutoProcessor.from_pretrained(model_str)

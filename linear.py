@@ -31,9 +31,9 @@ def parse_args():
     parser.add_argument('--max_train_iters', type=int)
     parser.add_argument('-b','--blocks', nargs='+', type=int, help='blocks to extract features from')
     parser.add_argument('--backbone', type=str, )
-    parser.add_argument('--c_min', type=int, help='range of C values to sweep')
-    parser.add_argument('--c_max', type=int, help='range of C values to sweep')
-    parser.add_argument('--c_step', type=int, help='range of C values to sweep')
+    parser.add_argument('--c_min', type=int, help='range of C values to sweep', default=-6)
+    parser.add_argument('--c_max', type=int, help='range of C values to sweep', default=5)
+    parser.add_argument('--c_step', type=int, help='range of C values to sweep', default=45)
     parser.add_argument('--C', type=float, help='C value for linear classifier')
 
 
@@ -68,7 +68,7 @@ def sweep_C_values(
     best_stats = None
     best_C = None
 
-    C_POWER_RANGE = np.arange(c_min, c_max, c_step)
+    C_POWER_RANGE = np.linspace(c_min, c_max, c_step)
     ALL_C = 10 ** C_POWER_RANGE
     all_stats = {}
 
@@ -81,6 +81,7 @@ def sweep_C_values(
             model=model,
             test_data_loader=test_data_loader,
             out_data_loader=out_data_loader,
+            config=config
         )
         all_stats[C] = stats
         if best_stats is None or stats[metric] > best_stats[metric]:
@@ -132,9 +133,9 @@ def evaluate_model(
     x1, x2 = np.max(in_preds, axis=1), np.max(out_preds, axis=1)
     out_results = metric_ood(x1, x2)
     oscr_score = compute_oscr(in_preds, out_preds, in_targets)
-    logger.info('OSCR: %.4f' % oscr_score)
+    logger.info('OSCR: %.4f' % oscr_score['oscr'])
     out_result_details = {}
-    for i, label_u in enumerate(out_targets):
+    for i, label_u in enumerate(np.unique(out_targets)):
         pred_u = out_preds[out_targets==label_u]
         x1, x2 = np.max(in_preds, axis=1), np.max(pred_u, axis=1)
         pred = np.argmax(pred_u, axis=1)
@@ -149,7 +150,7 @@ def evaluate_model(
                                         'average_score':'\t'+ str(round(np.mean(x2),4)), 
                                         'AUROC':'\t'+ str(round(result['AUROC'],2))}
     
-    return {'AUC': out_results['Bas']['AUROC'], 'OSCR': oscr_score * 100, 'accuracy': closed_results, 'out_results_details': out_result_details}
+    return {'AUC': out_results['Bas']['AUROC'], 'OSCR': oscr_score['oscr'] * 100, 'accuracy': closed_results, 'out_results_details': out_result_details}
     
 
 if __name__ == '__main__':

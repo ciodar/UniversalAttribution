@@ -48,6 +48,14 @@ dataset
     ...
 ```
 
+## Installation
+
+The code was tested in Python 3.12 and PyTorch 2.6.0. To install the required packages, run the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Code
 
 To run the code, execute the following command:
