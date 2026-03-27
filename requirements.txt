@@ -4,3 +4,4 @@ timm
 pandas
 scikit-learn
 matplotlib
+faiss-cpu

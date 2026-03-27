@@ -58,9 +58,28 @@ pip install -r requirements.txt
 
 ## Code
 
-To run the code, execute the following command:
+### Linear Probe
+
+To run the logistic regression linear probe, execute the following command:
 ```bash
 python linear.py -c base -d GenImage:split=split1
+```
+
+### KNN
+
+To run the K-Nearest Neighbors experiment, execute the following command:
+```bash
+python knn.py -c base -d GenImage:split=split1
+```
+
+The KNN classifier uses Faiss inner product search on L2-normalized CLIP features (equivalent to cosine similarity). By default, it performs a k-value sweep on the validation set (k ∈ [1, 20]) and evaluates the best k on the held-out test set. To use a fixed k value:
+```bash
+python knn.py -c base -d GenImage:split=split1 --K 5
+```
+
+To run across all 5 GenImage splits:
+```bash
+bash scripts/knn.sh
 ```
 
 ## Citation
